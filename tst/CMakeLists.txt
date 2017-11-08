@@ -8,6 +8,7 @@ set(SOURCES
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
-target_link_libraries(${PROJECT_NAME} bencode_lib gtest_main)
-target_include_directories(${PROJECT_NAME} PRIVATE ../src)
+target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -pedantic -Werror)
+target_link_libraries(${PROJECT_NAME} PRIVATE bencode gtest_main)
+target_link_libraries(${PROJECT_NAME} PRIVATE --coverage)
 add_test(NAME bencode_test COMMAND bencode_tst)

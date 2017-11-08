@@ -21,6 +21,7 @@ namespace Bencode
     case TokenType::List:
         return os << "List";
     }
+    return os;
 }
 
 }
